@@ -1,13 +1,14 @@
-# Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum
+# what is the largest prime factor of the number 600851475143
 
 def f1(n):
-    return (n * (n + 1) * (2 * n + 1)) // 6
+    i = 2
+    while i*i <= n:
+        if n%i:
+            i += 1
+        else:
+            n //= i
 
-def f2(n):
-    return (n * (n + 1)) // 2
+    return n
 
-num = 100
-
-res = f2(100)**2 - f1(100)
-
+res = f1(600851475143)
 print(res)
